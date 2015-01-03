@@ -1,12 +1,10 @@
-import java.io.InputStream;
-
 final class FastReader {
 
-	private InputStream in = null;
+	private java.io.InputStream in = null;
 	private int pos, count;
 	private byte[] buf = new byte[1 << 16];
 
-	public FastReader(InputStream in) {
+	public FastReader(java.io.InputStream in) {
 		this.in = in;
 		pos = 0;
 		count = 0;
