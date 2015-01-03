@@ -73,7 +73,7 @@ class FastReader(in: InputStream) {
     var c: Byte = read
     while (c < ' ')
       c = read
-    while (c > ' ') {
+    while (c >= ' ') {
       sb.append(c.toChar)
       c = read
     }
