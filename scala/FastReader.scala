@@ -1,6 +1,4 @@
-import java.io.InputStream
-
-class FastReader(in: InputStream) {
+class FastReader(in: java.io.InputStream) {
 
   var pos: Int = 0
   var count: Int = 0
@@ -42,7 +40,21 @@ class FastReader(in: InputStream) {
   }
 
   def readInt(): Int = {
-    return readLong.toInt
+    var c: Byte = read
+    var sign: Byte = 1
+    while (c <= ' ') {
+      c = read
+    }
+    if (c == '-') {
+      sign = -1
+      c = read
+    }
+    var n: Int = 0
+    do {
+      n = n * 10 + c - '0'
+      c = read
+    } while (c >= '0' && c <= '9')
+    return n * sign
   }
 
   def readDouble(): Double = {
